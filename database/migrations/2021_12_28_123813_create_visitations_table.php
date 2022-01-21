@@ -16,12 +16,14 @@ class CreateVisitationsTable extends Migration
         Schema::create('visitations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('patient_id');
+            $table->unsignedBigInteger('user_id');
             $table->text('Description') ;
             $table->text('lab_results')->nullable();
             $table->date('visit_day');
             $table->timestamps();
 
             $table->index('patient_id');
+            $table->index('user_id');
         });
     }
 

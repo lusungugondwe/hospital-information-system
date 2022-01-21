@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Visitation;
 use App\Medication;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\Types\Collection;
 
 class VisitationController extends Controller
@@ -29,10 +30,13 @@ class VisitationController extends Controller
     public function store(Request $request)
     {
         $date = Carbon::now()->format('d-m-y'); // date in day month year format
-        //adding visit day to $request
+        $userID = Auth::user()->id; // getting user id;
+        //adding userID and visit day to $request
+        $request -> merge(['user_id' => $userID]);
         $request -> merge(['visit_day' => $date]);
         $request -> validate([
             'patient_id' => 'required',
+            'user_id' => 'required',
             'Description' => 'required',
             'visit_day' => 'required'
         ]);
@@ -51,6 +55,10 @@ class VisitationController extends Controller
     {
 
         return Visitation::where('patient_id', $id)->get();
+    }
+
+    public function adminster($id){
+        return Visitation::where('user_id', $id)->get();
     }
 
     //getting todays patient visits

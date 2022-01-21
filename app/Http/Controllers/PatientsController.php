@@ -23,9 +23,15 @@ class PatientsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
     public function store(Request $request)
     {
+        $id = random_int(1,9999);
+        $request -> merge(['id' => $id]);
+
         $request -> validate([
+            'id' => 'required | unique:patients,id',
             'firstname' =>   'required',
             'surname'   =>   'required',
             'Phonenumber' =>  'required' ,
@@ -37,6 +43,8 @@ class PatientsController extends Controller
         ]);
         return Patient::create($request->all());
     }
+
+
 
     /**
      * Display the specified resource.

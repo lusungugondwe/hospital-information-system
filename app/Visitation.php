@@ -10,6 +10,7 @@ class Visitation extends Model
 {
     protected $fillable = [
         'patient_id' ,
+        'user_id',
         'Description',
         'lab_results',
         'visit_day'
@@ -17,6 +18,10 @@ class Visitation extends Model
     ];
     public function patient(){
         return $this->belongsTo(Patient::class);
+    }
+
+    public function user(){
+        return $this->hasOne(User::class);
     }
 
     public function Prescription(){

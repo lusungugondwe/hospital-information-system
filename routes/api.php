@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PatientsController;
@@ -26,7 +27,7 @@ Route::post('/user_Registration', [AuthController::class, 'register']);
  Route::post('/sign_in', [AuthController::class, 'signIn']);
 
 //forgot password
-Route::post('/forgot_password', [AuthController::class, 'forgotPassword']);
+Route::post('/forgot_password', [ForgotPasswordController::class]);
 
 
 //password reset
@@ -123,7 +124,8 @@ Route::get('/Services',[ServicesController::class, 'index']);
 //getting visitation's services
 Route::get('/Visitation_Services/{id}', [VisitationController::class, 'Services']); // passing in the visitation id
 
-
+//getting visitations administered by user usibg users id;
+Route::get('/Visitation/Administer/{id}', [VisitationController::class, 'adminster']);
 //Showing all prescriptions
 Route::get('/Prescription', [PrescriptionController::class, 'show']);
 
