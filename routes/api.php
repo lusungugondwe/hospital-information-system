@@ -23,6 +23,12 @@ use App\Http\Controllers\ServicesofferedController;
 // creating new user
 Route::post('/user_Registration', [AuthController::class, 'register']);
 
+Route::get('/token', function(Request $request){
+    $token = $request->session()->token();
+    $token = csrf_token();
+    return $token;
+});
+
   //logging in
  Route::post('/sign_in', [AuthController::class, 'signIn']);
 
