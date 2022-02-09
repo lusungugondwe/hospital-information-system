@@ -39,8 +39,8 @@ class VisitationController extends Controller
             'patient_id' => 'required',
             'user_id' => 'required',
             'Description' => 'required',
-            'visit_day' => 'required'
-            'Status' => 'required'
+            'visit_day' => 'required',
+            'Status' => 'required',
         ]);
             return Visitation::create($request->all());
 
@@ -77,7 +77,9 @@ class VisitationController extends Controller
         return Visitation::doesntHave('Prescription')->get();
     }
 
-
+    public function activeVisits(){
+        return Visitation::where('Status','Active')->get();
+    }
 
     /**
      * Update the specified resource in storage.

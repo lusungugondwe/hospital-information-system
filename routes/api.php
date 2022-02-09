@@ -142,6 +142,7 @@ Route::get('/Visitation/{id}', [PatientsController::class, 'visits']);
 //getting visitation's prescription by passing in visitation id
 Route::get('/Visitation_Prescription/{id}', [VisitationController::class, 'prescription']); // passing in the visitation id
 
+Route::get('/active_visits', [VisitationController::class, 'activeVisits']);
 
 //getting visits without prescription
 Route::get('/Visitation_without_Prescription', [VisitationController::class, 'Active']);
