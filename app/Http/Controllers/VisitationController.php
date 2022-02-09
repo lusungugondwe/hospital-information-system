@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 use Illuminate\Http\Request;
 use App\Visitation;
 use App\Medication;
@@ -34,11 +34,13 @@ class VisitationController extends Controller
         //adding userID and visit day to $request
         $request -> merge(['user_id' => $userID]);
         $request -> merge(['visit_day' => $date]);
+        $request -> merge(['Status' => "Active"]);
         $request -> validate([
             'patient_id' => 'required',
             'user_id' => 'required',
             'Description' => 'required',
             'visit_day' => 'required'
+            'Status' => 'required'
         ]);
             return Visitation::create($request->all());
 
@@ -69,6 +71,12 @@ class VisitationController extends Controller
         return Visitation::where('patient_id', $id)
                             ->where('visit_day',$date)->get();
     }
+
+
+    public function Active(){
+        return Visitation::doesntHave('Prescription')->get();
+    }
+
 
 
     /**

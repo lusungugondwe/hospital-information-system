@@ -53,7 +53,7 @@ class AuthController extends Controller
         $token = $user -> createToken('myapptoken') -> plainTextToken;
 
         $response = [
-            'user_Role' => $user->Role,
+            'user' => $user,
             'Token' => $token
         ];
 
