@@ -38,6 +38,25 @@ class PrescriptionController extends Controller
 
     }
 
+    public function storeArray(Request $request){
+        $save = false;
+        $items = $request->get('items');
+        foreach($items as $item){
+            $presc = new Prescription();
+            $presc ->visitation_id = $item['visitation_id'];
+            $presc ->medications_id  = $item['medications_id'];
+            $save = $presc -> save();
+        }
+        if($save){
+            return response([
+            'message' => 'Prescription created succesifuly'], 201);
+        }else{
+            return response([
+                'message' => 'Failled to create prescription'
+            ], 401);
+        }
+    }
+
     /**
      * Display the specified resource.
      *

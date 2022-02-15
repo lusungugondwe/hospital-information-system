@@ -108,6 +108,8 @@ Route::put('/Visitation/{id}', [VisitationController::class, 'update']);
 
 //creating a new prescription
 Route::post('/Visitation_prescription', [PrescriptionController::class, 'store']);
+
+Route::post('/Visitation_prescriptions', [PrescriptionController::class, 'storeArray']);
 //creating a new service consumed
 Route::post('/ServicesOffered', [ServicesofferedController::class, 'store']);
 
