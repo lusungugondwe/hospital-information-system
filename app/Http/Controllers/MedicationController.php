@@ -26,6 +26,7 @@ class MedicationController extends Controller
     {
         $request -> validate([
         'name' => 'required',
+        'Type' => 'required',
         'Price' => 'required'
     ]);
         return Medication::create($request->all());
