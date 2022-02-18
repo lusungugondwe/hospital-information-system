@@ -27,7 +27,7 @@ class PatientsController extends Controller
 
     public function store(Request $request)
     {
-        $id = random_int(1,9999);
+        $id = random_int(1,99999);
         $request -> merge(['id' => $id]);
 
         $request -> validate([

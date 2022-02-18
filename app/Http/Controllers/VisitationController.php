@@ -60,7 +60,7 @@ class VisitationController extends Controller
     }
 
     public function adminster($id){
-        return Visitation::where('user_id', $id)->get();
+        return Visitation::where('user_id', $id)->orderBy('id','desc')->get();
     }
 
     //getting todays patient visits
@@ -69,16 +69,16 @@ class VisitationController extends Controller
         $date = Carbon::now()->format('d-m-y');
 
         return Visitation::where('patient_id', $id)
-                            ->where('visit_day',$date)->get();
+                            ->where('visit_day',$date)->orderBy('id','desc')->get();
     }
 
 
     public function Active(){
-        return Visitation::doesntHave('Prescription')->get();
+        return Visitation::doesntHave('Prescription')->orderBy('id','desc')->get();
     }
 
     public function activeVisits(){
-        return Visitation::where('Status','Active')->get();
+        return Visitation::where('Status','Active')->orderBy('id','desc')->get();
     }
 
     /**
