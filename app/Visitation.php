@@ -12,6 +12,7 @@ class Visitation extends Model
         'patient_id' ,
         'user_id',
         'Description',
+        'prescription_status',
         'Status',
         'lab_results',
         'visit_day'

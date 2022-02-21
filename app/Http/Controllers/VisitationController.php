@@ -35,6 +35,7 @@ class VisitationController extends Controller
         $request -> merge(['user_id' => $userID]);
         $request -> merge(['visit_day' => $date]);
         $request -> merge(['Status' => "Active"]);
+        $request -> merge(['prescription_status' => 'not_Given'])
         $request -> validate([
             'patient_id' => 'required',
             'user_id' => 'required',
