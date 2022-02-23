@@ -18,7 +18,7 @@ class CreateVisitationsTable extends Migration
             $table->unsignedBigInteger('patient_id');
             $table->unsignedBigInteger('user_id');
             $table->text('Description') ;
-            $table->text('prescription_status');
+            $table->text('Test_Order')->nullable();
             $table->text('Status') ;
             $table->text('lab_results')->nullable();
             $table->date('visit_day');

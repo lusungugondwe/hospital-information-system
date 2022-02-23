@@ -103,4 +103,10 @@ class AuthController extends Controller
         $users = User::all();
         return count($users);
     }
+
+    public function update(Request $request, $id){
+        $usr = User::find($id);
+        $usr ->update($request->all());
+        return $usr;
+    }
 }

@@ -62,6 +62,10 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     //logging out
  Route::post('/sign_out', [AuthController::class, 'logout']);
 
+ // creating new user
+Route::put('/user_Registration/{id}', [AuthController::class, 'update']);
+
+
 
 
 //creating a new patient
@@ -102,7 +106,7 @@ Route::post('/Visitation', [VisitationController::class, 'store']);
 
 
 
-//updating a visit
+//updating a visit with visit id
 Route::put('/Visitation/{id}', [VisitationController::class, 'update']);
 
 
@@ -148,6 +152,12 @@ Route::get('/active_visits', [VisitationController::class, 'activeVisits']);
 
 //getting visits without prescription
 Route::get('/Visitation_without_Prescription', [VisitationController::class, 'Active']);
+
+//getting visits without prescription  and lab results are null
+Route::get('/Visitation_without_Results', [VisitationController::class, 'Active']);
+
+//visits with lab test orders
+Route::get('/lab_test_orders', [VisitationController::class, 'orders']);
 
 //getting patients visitation of today using patient id
 Route::get('/Visitation_today/{patient_id}', [VisitationController::class, 'today']);

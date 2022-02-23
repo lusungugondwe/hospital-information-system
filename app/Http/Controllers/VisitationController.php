@@ -35,13 +35,14 @@ class VisitationController extends Controller
         $request -> merge(['user_id' => $userID]);
         $request -> merge(['visit_day' => $date]);
         $request -> merge(['Status' => "Active"]);
-        $request -> merge(['prescription_status' => 'not_Given'])
+        $request -> merge(['prescription_status' => 'not_Given']);
         $request -> validate([
             'patient_id' => 'required',
             'user_id' => 'required',
             'Description' => 'required',
             'visit_day' => 'required',
             'Status' => 'required',
+            'prescription_status' => 'required',
         ]);
             return Visitation::create($request->all());
 
@@ -80,6 +81,15 @@ class VisitationController extends Controller
 
     public function activeVisits(){
         return Visitation::where('Status','Active')->orderBy('id','desc')->get();
+    }
+
+    public function lab(){
+        return Visitation::doesntHave('Prescription')->orderBy('id','desc')->get();
+    }
+
+    public function orders(){
+        $nll = !null;
+        return Visitation::doesntHave('Prescription')->whereNotNull('Test_Order')->whereNull('lab_results')->orderBy('id','desc')->get();
     }
 
     /**
