@@ -17,6 +17,8 @@ class CreatePrescriptionsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('visitation_id');
             $table->unsignedBigInteger('medications_id');
+            $table->integer('Qauntity');
+            $table->integer('Status');
             $table->timestamps();
 
             $table->index('visitation_id');

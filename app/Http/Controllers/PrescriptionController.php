@@ -29,6 +29,8 @@ class PrescriptionController extends Controller
      */
     public function store(Request $request)
     {
+        $request -> merge(['Qauntity' => 1]);
+        $request -> merge(['Status' => 0]);
         $request -> validate([
 
              'visitation_id' => 'required',
@@ -45,6 +47,8 @@ class PrescriptionController extends Controller
             $presc = new Prescription();
             $presc ->visitation_id = $item['visitation_id'];
             $presc ->medications_id  = $item['medications_id'];
+            $presc ->Qauntity = $item['Qauntity'];
+            $presc ->Status = $item['Status'];
             $save = $presc -> save();
         }
         if($save){
@@ -55,6 +59,33 @@ class PrescriptionController extends Controller
                 'message' => 'Failled to create prescription'
             ], 401);
         }
+    }
+
+    public function upArray(Request $request){
+        $save = false;
+        $items = $request->get('items');
+        foreach($items as $item){
+            $save = Prescription::where('visitation_id',$item['visitation_id'])
+                                    ->where('medications_id',$item['medications_id']) -> update(['Qauntity' => $item['Qauntity'],'Status' => $item['Status']]);
+                  
+        }
+        if($save){
+            return response([
+            'message' => 'Prescription created succesifuly'], 201);
+        }else{
+            return response([
+                'message' => 'Failled to create prescription'
+            ], 401);
+        }
+    }
+
+    public function search(Request $request){
+        return Prescription::where("medications_id",$request.medications_id)
+                             ->where("visitation_id",$request.visitation_id)->get();
+    }
+
+    public function all($id){
+        return Prescription::where("visitation_id",$id)->get();
     }
 
     /**
@@ -79,7 +110,9 @@ class PrescriptionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $patient = Prescription::find($id);
+        $patient->update($request->all());
+        return $patient;
     }
 
     /**

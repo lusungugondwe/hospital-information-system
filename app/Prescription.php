@@ -8,7 +8,9 @@ class Prescription extends Model
 {
     protected $fillable = [
         'visitation_id',
-        'medications_id'
+        'medications_id',
+        'Qauntity',
+        'Status',
     ];
     public function Visitation(){
         return $this->belongsTo(Visitation::class);

@@ -114,11 +114,18 @@ Route::put('/Visitation/{id}', [VisitationController::class, 'update']);
 Route::post('/Visitation_prescription', [PrescriptionController::class, 'store']);
 
 Route::post('/Visitation_prescriptions', [PrescriptionController::class, 'storeArray']);
+
+Route::put('/Visitation_prescriptions', [PrescriptionController::class, 'upArray']);
+
+
 //creating a new service consumed
 Route::post('/ServicesOffered', [ServicesofferedController::class, 'store']);
 
 
 });
+
+//getting pivot table by passing in visit id
+Route::get('/Visitation_pivot/{id}', [PrescriptionController::class, 'all']);
 
 //getting all patient
 Route::get('/patients',[PatientsController::class, 'index']);
@@ -147,6 +154,11 @@ Route::get('/Visitation/{id}', [PatientsController::class, 'visits']);
 
 //getting visitation's prescription by passing in visitation id
 Route::get('/Visitation_Prescription/{id}', [VisitationController::class, 'prescription']); // passing in the visitation id
+
+//getting data from pivot table prescription
+Route::get('/Visitation/{id}', [PatientsController::class, 'visits']);
+
+
 
 Route::get('/active_visits/{status}', [VisitationController::class, 'activeVisits']);
 
