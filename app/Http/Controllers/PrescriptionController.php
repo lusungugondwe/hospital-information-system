@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Prescription;
 use App\Medication;
+use Carbon\Carbon;
 
 class PrescriptionController extends Controller
 {
@@ -121,8 +122,28 @@ class PrescriptionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function reportMonthly()
     {
+        $prescriptions = Prescription::join("medications","medications.id","=","prescriptions.medications_id")
+        ->whereMonth('prescriptions.created_at', Carbon::now()->month)
+        ->where('Status', "1")
+        ->groupBy('medications.name')
+        ->selectRaw('medications.name,sum(prescriptions.Qauntity) as Total,medications.Price,(medications.Price * sum(prescriptions.Qauntity)) as Revenue')
+        ->orderBy('Total', 'DESC')
+        ->get();
+        return $prescriptions;
+
+    }
+    public function reportMonthlyUnPrsc()
+    {
+        $prescriptions = Prescription::join("medications","medications.id","=","prescriptions.medications_id")
+        ->whereMonth('prescriptions.created_at', Carbon::now()->month)
+        ->where('Status', "0")
+        ->groupBy('medications.name')
+        ->selectRaw('medications.name,sum(prescriptions.Qauntity) as Total,medications.Price,(medications.Price * sum(prescriptions.Qauntity)) as Revenue')
+        ->orderBy('Total', 'DESC')
+        ->get();
+        return $prescriptions;
 
     }
 }

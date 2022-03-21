@@ -77,6 +77,14 @@ class VisitationController extends Controller
         return Visitation::doesntHave('Prescription')->orderBy('id','desc')->get();
     }
 
+    public function reportMonthly(){
+        return Visitation::join('patients','visitations.patient_id','=','patients.id')
+                            ->where('visitations.Status','Complete')
+                            ->whereMonth('visitations.created_at', Carbon::now()->month)
+                            ->orderBy('visitations.id','desc')->get();
+    }
+
+    
     public function activeVisits($status){
         return Visitation::where('Status',$status)->orderBy('id','desc')->get();
     }

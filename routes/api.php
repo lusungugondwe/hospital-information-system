@@ -190,3 +190,12 @@ Route::get('/Services/{id}',[ServicesController::class, 'show']);
 // show a search Service
 Route::get('/Services/search/{name}',[ServicesController::class, 'search']);
 
+// getting all monthly visits
+Route::get('/reportMonthly',[VisitationController::class, 'reportMonthly']);
+
+//getting monthly medications summary
+Route::get('/reportMonthlyMeds',[PrescriptionController::class, 'reportMonthly']);
+
+//getting monthly unprescribed medications summary
+Route::get('/reportMonthlyMedsUnPrescribed',[PrescriptionController::class, 'reportMonthlyUnPrsc']);
+
