@@ -10,6 +10,7 @@ class Patient extends Model
         'id',
         'firstname',
         'surname',
+        'Gender',
         'Phonenumber',
         'next_of_kin_contact',
         'blood_group',
@@ -18,6 +19,7 @@ class Patient extends Model
         'address'
 
     ];
+    // this function is there to define the relationship that a client (patient) can have many instances of the visitation model
     public function Visitation(){
         return $this ->hasMany(Visitation::class);
     }

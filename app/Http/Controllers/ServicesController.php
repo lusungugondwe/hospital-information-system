@@ -69,7 +69,7 @@ class ServicesController extends Controller
     {
         return Services::destroy($id);
     }
-
+// this function returns services that have there name resembling the param $name
     public function search($name)
     {
        return Services::where('name', 'like', '%'.$name.'%')->get();

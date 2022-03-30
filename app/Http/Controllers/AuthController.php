@@ -10,6 +10,7 @@ use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
+    //creating a new user
     public function register(Request $request){
             $fields = $request->validate([
                 'name' => 'required | string',
@@ -35,6 +36,7 @@ class AuthController extends Controller
             return response ($response, 201);
     }
 
+    //logs in the user and creates a token for all authenticated
     public function signIn(Request $request){
         $fields = $request->validate([
             'email' => 'required |string ',
@@ -60,6 +62,7 @@ class AuthController extends Controller
         return response ($response, 201);
 }
 
+//signs out the user and deletes the authenticationn token from the database
     public function logout(Request $request){
         auth()->user()->tokens()->delete();
 
@@ -68,6 +71,7 @@ class AuthController extends Controller
         ];
     }
 
+    // this sends a password reset link the user's email
     public function forgotPassword(Request $request){
         $request -> validate([
             'email' => 'required | email',
@@ -77,6 +81,7 @@ class AuthController extends Controller
             'message' => 'Reset password link sent to youre email'];
     }
 
+    // this function updates the user password in the system
     public function resetPassword(Request $request){
         $request -> validate([
             'email'  => 'required | email',
@@ -94,16 +99,18 @@ class AuthController extends Controller
         }
         return response("Password Changed Succesifuly");
     }
-
+    // this function returns all active users in the system
     public function show(){
         return User::all();
     }
-
+// this returns user count
     public function count(){
         $users = User::all();
         return count($users);
+
     }
 
+    // this update the user records
     public function update(Request $request, $id){
         $usr = User::find($id);
         $usr ->update($request->all());

@@ -12,10 +12,11 @@ class Prescription extends Model
         'Qauntity',
         'Status',
     ];
+    // this function declares the visit model ownership of an instance of the Prescription model
     public function Visitation(){
         return $this->belongsTo(Visitation::class);
     }
-
+// this function declares that a medication instance can have many prescriptions
     public function Medication(){
         return $this->belongsToMany(Medication::class,'prescriptions');
     }

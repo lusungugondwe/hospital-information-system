@@ -40,7 +40,7 @@ class PrescriptionController extends Controller
         return Prescription::create($request->all());
 
     }
-
+    //this function stores an array of Prescription passed to the function as $request
     public function storeArray(Request $request){
         $save = false;
         $items = $request->get('items');
@@ -62,6 +62,7 @@ class PrescriptionController extends Controller
         }
     }
 
+    //this function update an array of Prescription passed to the function as $request
     public function upArray(Request $request){
         $save = false;
         $items = $request->get('items');
@@ -79,18 +80,18 @@ class PrescriptionController extends Controller
             ], 401);
         }
     }
-
+    // this function the prescription record the has the visitatio_id and medication_id eqauling to the passed from the $request object
     public function search(Request $request){
         return Prescription::where("medications_id",$request.medications_id)
                              ->where("visitation_id",$request.visitation_id)->get();
     }
-
+// this display all prescriptions that have a visitation_ equal to param $id
     public function all($id){
         return Prescription::where("visitation_id",$id)->get();
     }
 
     /**
-     * Display the specified resource.
+     * this joins the prescription table with the medication table on medication.id and prescriptions.medications_id
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -117,10 +118,8 @@ class PrescriptionController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Dispaly all the resource from storage that meet the conditions specified in the query
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function reportMonthly()
     {
@@ -134,13 +133,18 @@ class PrescriptionController extends Controller
         return $prescriptions;
 
     }
+
+        /**
+     * Dispaly all the resource from storage that meet the conditions specified in the query
+     *
+     */
     public function reportMonthlyUnPrsc()
     {
         $prescriptions = Prescription::join("medications","medications.id","=","prescriptions.medications_id")
         ->whereMonth('prescriptions.created_at', Carbon::now()->month)
         ->where('Status', "0")
         ->groupBy('medications.name')
-        ->selectRaw('medications.name,sum(prescriptions.Qauntity) as Total,medications.Price,(medications.Price * sum(prescriptions.Qauntity)) as Revenue')
+        ->selectRaw('medications.name,sum(prescriptions.Qauntity) as Total,medications.Price,(medications.Price * sum(prescriptions.Qauntity)) as Revenue_lost')
         ->orderBy('Total', 'DESC')
         ->get();
         return $prescriptions;

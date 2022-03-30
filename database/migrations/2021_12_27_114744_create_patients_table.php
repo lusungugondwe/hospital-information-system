@@ -18,6 +18,7 @@ class CreatePatientsTable extends Migration
             $table->primary('id');
             $table->string('firstname');
             $table->string('surname');
+            $table->string('Gender');
             $table->string('Phonenumber');
             $table->string('next_of_kin_contact');
             $table->string('blood_group');

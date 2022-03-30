@@ -43,6 +43,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+// this function creates a one to many relationship with the visitation model    
     public function visitation(){
         return $this -> hasMany(Visitation::class);
     }

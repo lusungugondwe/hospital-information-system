@@ -35,6 +35,7 @@ class PatientsController extends Controller
             'firstname' =>   'required',
             'surname'   =>   'required',
             'Phonenumber' =>  'required' ,
+            'Gender' => 'required',
             'next_of_kin_contact' => 'required',
             'blood_group'  =>  'required',
             'Medical_scheme'   =>  'required',
@@ -82,18 +83,19 @@ class PatientsController extends Controller
     {
         return Patient::destroy($id);
     }
-
+// this returns a resource that have either the attribute firstname or surname equaling to the param $name
     public function search($name)
     {
        return Patient::Where('firstname', 'like', '%'.$name.'%')
                        -> orWhere('surname', 'like', '%'.$name.'%')->get();
     }
-
+// displays all resources that belong to the patient with an Id equaling to param $id 
     public function visits($id){
             $patient = Patient::find($id);
             return $patient->Visitation;
     }
 
+    //display the number of patients in storage
     public function count(){
         $patient = Patient::all();
         return count($patient);

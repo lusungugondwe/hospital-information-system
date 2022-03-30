@@ -193,6 +193,10 @@ Route::get('/Services/search/{name}',[ServicesController::class, 'search']);
 // getting all monthly visits
 Route::get('/reportMonthly',[VisitationController::class, 'reportMonthly']);
 
+// getting all monthly diagnosis
+Route::get('/monthlyDiagnosis',[VisitationController::class, 'diagnosis']);
+
+
 //getting monthly medications summary
 Route::get('/reportMonthlyMeds',[PrescriptionController::class, 'reportMonthly']);
 
