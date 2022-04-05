@@ -191,15 +191,15 @@ Route::get('/Services/{id}',[ServicesController::class, 'show']);
 Route::get('/Services/search/{name}',[ServicesController::class, 'search']);
 
 // getting all monthly visits
-Route::get('/reportMonthly',[VisitationController::class, 'reportMonthly']);
+Route::get('/report/{time}',[VisitationController::class, 'reportMonthly']);
 
-// getting all monthly diagnosis
-Route::get('/monthlyDiagnosis',[VisitationController::class, 'diagnosis']);
+// getting diagnosis by passing in period ass time
+Route::get('/Diagnosis/{time}',[VisitationController::class, 'diagnosis']);
 
 
 //getting monthly medications summary
-Route::get('/reportMonthlyMeds',[PrescriptionController::class, 'reportMonthly']);
+Route::get('/reportMonthlyMeds/{time}',[PrescriptionController::class, 'reportMonthly']);
 
 //getting monthly unprescribed medications summary
-Route::get('/reportMonthlyMedsUnPrescribed',[PrescriptionController::class, 'reportMonthlyUnPrsc']);
+Route::get('/reportMonthlyMedsUnPrescribed/{time}',[PrescriptionController::class, 'reportMonthlyUnPrsc']);
 

@@ -77,10 +77,28 @@ class VisitationController extends Controller
         return Visitation::doesntHave('Prescription')->orderBy('id','desc')->get();
     }
 // displaying all visits that have there status as Completed
-    public function reportMonthly(){
+    public function reportMonthly($time){
+        if($time == "thisMonth"){
         return Visitation::where('Status','Complete')
                             ->whereMonth('created_at', Carbon::now()->month)
                             ->orderBy('id','desc')->get();
+        }else if($time == "lastMonth"){
+            return Visitation::where('Status','Complete')
+                            ->whereMonth('created_at', Carbon::now()->subMonth()->month)
+                            ->orderBy('id','desc')->get();
+        }else if($time == "thisYear"){
+            return Visitation::where('Status','Complete')
+                            ->whereYear('created_at', Carbon::now()->year)
+                            ->orderBy('id','desc')->get();
+        }else if($time == "lastYear"){
+            return Visitation::where('Status','Complete')
+                            ->whereYear('created_at', Carbon::now()->subYear()->year)
+                            ->orderBy('id','desc')->get();
+        }else {
+            return response () -> json([
+                'message' => "no time preiod passed"
+            ]);
+        }                
     }
 
     // displaying Visits that have their status eqaul to the param $status 
@@ -134,10 +152,32 @@ class VisitationController extends Controller
         /**
      * Display monthly Diagoniss report
      */
-    public function diagnosis(){
+    public function diagnosis($time){
+        if($time == "thisMonth"){
         return Visitation::join('patients','patients.id','=','visitations.patient_id')
+                                ->whereMonth('visitations.created_at', Carbon::now()->month)
                                 ->where('Status','Complete')
-                                ->get();        
+                                ->get();
+                            }else if ($time == 'thisYear'){
+                                return Visitation::join('patients','patients.id','=','visitations.patient_id')
+                                ->whereYear('visitations.created_at', Carbon::now()->year)
+                                ->where('Status','Complete')
+                                ->get();
+                            }else if ($time == 'lastMonth'){
+                                return Visitation::join('patients','patients.id','=','visitations.patient_id')
+                                ->whereMonth('visitations.created_at', Carbon::now()->subMonth()->month)
+                                ->where('Status','Complete')
+                                ->get();
+                            }else if($time == 'lastYear'){
+                                return Visitation::join('patients','patients.id','=','visitations.patient_id')
+                                ->whereYear('visitations.created_at', Carbon::now()->subYear()->year)
+                                ->where('Status','Complete')
+                                ->get();
+                            } else {
+                                return response () -> json([
+                                    'message' => "no time preiod passed"
+                                ]);
+    }        
     }
 
 

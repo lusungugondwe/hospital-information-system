@@ -121,8 +121,9 @@ class PrescriptionController extends Controller
      * Dispaly all the resource from storage that meet the conditions specified in the query
      *
      */
-    public function reportMonthly()
+    public function reportMonthly($time)
     {
+        if($time == "thisMonth"){
         $prescriptions = Prescription::join("medications","medications.id","=","prescriptions.medications_id")
         ->whereMonth('prescriptions.created_at', Carbon::now()->month)
         ->where('Status', "1")
@@ -131,15 +132,51 @@ class PrescriptionController extends Controller
         ->orderBy('Total', 'DESC')
         ->get();
         return $prescriptions;
+        }else if($time == "lastMonth"){
+        $prescriptions = Prescription::join("medications","medications.id","=","prescriptions.medications_id")
+        ->whereMonth('prescriptions.created_at', Carbon::now()->subMonth()->month)
+        ->where('Status', "1")
+        ->groupBy('medications.name')
+        ->selectRaw('medications.name,sum(prescriptions.Qauntity) as Total,medications.Price,(medications.Price * sum(prescriptions.Qauntity)) as Revenue')
+        ->orderBy('Total', 'DESC')
+        ->get();
+        return $prescriptions;       
 
+        }else if($time == "thisYear"){
+            $prescriptions = Prescription::join("medications","medications.id","=","prescriptions.medications_id")
+        ->whereYear('prescriptions.created_at', Carbon::now()->year)
+        ->where('Status', "1")
+        ->groupBy('medications.name')
+        ->selectRaw('medications.name,sum(prescriptions.Qauntity) as Total,medications.Price,(medications.Price * sum(prescriptions.Qauntity)) as Revenue')
+        ->orderBy('Total', 'DESC')
+        ->get();
+        return $prescriptions;
+        
+        }else if($time == "lastYear"){
+            $prescriptions = Prescription::join("medications","medications.id","=","prescriptions.medications_id")
+            ->whereYear('prescriptions.created_at', Carbon::now()->subYear()->month)
+            ->where('Status', "1")
+            ->groupBy('medications.name')
+            ->selectRaw('medications.name,sum(prescriptions.Qauntity) as Total,medications.Price,(medications.Price * sum(prescriptions.Qauntity)) as Revenue')
+            ->orderBy('Total', 'DESC')
+            ->get();
+            return $prescriptions;
+            
+
+        }else {
+            return response () -> json([
+                'message' => "no time preiod passed"
+            ]);
+        }
     }
 
         /**
      * Dispaly all the resource from storage that meet the conditions specified in the query
      *
      */
-    public function reportMonthlyUnPrsc()
+    public function reportMonthlyUnPrsc($time)
     {
+        if($time == "thisMonth"){
         $prescriptions = Prescription::join("medications","medications.id","=","prescriptions.medications_id")
         ->whereMonth('prescriptions.created_at', Carbon::now()->month)
         ->where('Status', "0")
@@ -148,6 +185,39 @@ class PrescriptionController extends Controller
         ->orderBy('Total', 'DESC')
         ->get();
         return $prescriptions;
+        }else if($time == "lastMonth"){
+            $prescriptions = Prescription::join("medications","medications.id","=","prescriptions.medications_id")
+        ->whereMonth('prescriptions.created_at', Carbon::now()->subMonth()->month)
+        ->where('Status', "0")
+        ->groupBy('medications.name')
+        ->selectRaw('medications.name,sum(prescriptions.Qauntity) as Total,medications.Price,(medications.Price * sum(prescriptions.Qauntity)) as Revenue_lost')
+        ->orderBy('Total', 'DESC')
+        ->get();
+        return $prescriptions;
+        }else if($time == "thisYear"){
+            $prescriptions = Prescription::join("medications","medications.id","=","prescriptions.medications_id")
+            ->whereYear('prescriptions.created_at', Carbon::now()->year)
+            ->where('Status', "0")
+            ->groupBy('medications.name')
+            ->selectRaw('medications.name,sum(prescriptions.Qauntity) as Total,medications.Price,(medications.Price * sum(prescriptions.Qauntity)) as Revenue_lost')
+            ->orderBy('Total', 'DESC')
+            ->get();
+            return $prescriptions;
+            
+        }else if($time == "lasYear"){
+            $prescriptions = Prescription::join("medications","medications.id","=","prescriptions.medications_id")
+            ->whereMonth('prescriptions.created_at', Carbon::now()->subYear()->year)
+            ->where('Status', "0")
+            ->groupBy('medications.name')
+            ->selectRaw('medications.name,sum(prescriptions.Qauntity) as Total,medications.Price,(medications.Price * sum(prescriptions.Qauntity)) as Revenue_lost')
+            ->orderBy('Total', 'DESC')
+            ->get();
+            return $prescriptions;         
+        }else {
+            return response () -> json([
+                'message' => "no time preiod passed"
+            ]);
+        }
 
     }
 }
