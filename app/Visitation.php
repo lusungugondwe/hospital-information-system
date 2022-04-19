@@ -8,7 +8,10 @@ use App\Medication;
 use App\Prescription;
 class Visitation extends Model
 {
-    // function declares parameters for the model that can be passed on from the API route 
+    /**
+     * 
+     * Specifies all the parameters that can be writen into our Visitation model object
+     */
     protected $fillable = [
         'patient_id' ,
         'user_id',
@@ -19,25 +22,37 @@ class Visitation extends Model
         'visit_day'
 
     ];
-    // this function attaches a client hospital visit to a client record 
+    /**
+     * The Visitation model belongs to a single Patient model object 
+     */
     public function patient(){
         return $this->belongsTo(Patient::class);
     }
 
-    // this fucntion attaches a client hospital visit to the user who has recorded that visit
+    /**
+     * The visitation model belongs to a single user model object
+     */
     public function user(){
         return $this->hasOne(User::class);
     }
-    //this function assign ownership of a patient visit to a prescription that has been assignined during that visit
+    
+    /**
+     * The visitation model has many instances of the Prescription model
+     */
     public function Prescription(){
         return $this ->hasMany(Prescription::class);
     }
-    //this function creates a pivot table services_offereds for the many to many relationship between the visit and the services table
+    /**
+     * 
+     * The Visitation model has many instances of the Services model with a pivot Services_offereds 
+     */
     public function Services(){
         return $this ->belongsToMany(Services::class,'services_offereds','visitation_id',
         'service_id');
     }
-    //this function creates a pivot table prescriptions for the many to many relationship between the visit and the Medications table
+    /**
+     * The Visitation model has many instances of the medication model with a pivot prescriptions
+     */
     public function Medication(){
         return $this->belongsToMany(Medication::class,'prescriptions','visitation_id',
         'medications_id');

@@ -69,8 +69,13 @@ class MedicationController extends Controller
     {
         return Medication::destroy($id);
     }
-    // display a resource that has a name containing the param $name
-    public function search($name)
+     /**
+     * Retreives a specific resoiurce with the specified parameter
+     * 
+     * @param string $name
+     * 
+     * @return Medication
+     */public function search($name)
     {
        return Medication::where('name', 'like', '%'.$name.'%')->get();
     }

@@ -58,12 +58,22 @@ class VisitationController extends Controller
 
         return Visitation::where('patient_id', $id)->get();
     }
- // displaying a specified resource by passing in the $id of the user that has created it
+    /**
+     * Retreives objects from storage with the specified $id
+     * 
+     * @param int $id
+     * @return visitation
+     */
     public function adminster($id){
         return Visitation::where('user_id', $id)->orderBy('id','desc')->get();
     }
 
-    //getting patients visits to day by passing in the patients_Id as $id 
+    /**
+     * Retreives all objects from storage that have the specified patients id and are recorded today
+     * 
+     * @param int $id
+     * @return Visitation
+     */
     public function today($id)
     {
         $date = Carbon::now()->format('d-m-y');
@@ -72,11 +82,21 @@ class VisitationController extends Controller
                             ->where('visit_day',$date)->orderBy('id','desc')->get();
     }
 
-// displaying all visits that do not have a prescription assigned to them by using an eloquent relation
+    /**
+     * Retreives all objects from storage that are have an active status
+     * 
+     * 
+     * @return Visitation
+     */
     public function Active(){
         return Visitation::doesntHave('Prescription')->orderBy('id','desc')->get();
     }
-// displaying all visits that have there status as Completed
+    /**
+     * Retreives all objects from storage that have the specified $time
+     * 
+     * @param string $id
+     * @return Visitation
+     */
     public function reportMonthly($time){
         if($time == "thisMonth"){
         return Visitation::where('Status','Complete')
@@ -101,19 +121,32 @@ class VisitationController extends Controller
         }                
     }
 
-    // displaying Visits that have their status eqaul to the param $status 
+    /**
+     * Retreives all objects from storage that have the specified status
+     * 
+     * @param string $status
+     * @return Visitation
+     */
     public function activeVisits($status){
         return Visitation::where('Status',$status)->orderBy('id','desc')->get();
     }
-// displaying all visits that do not have a prescription assigned to them by using an eloquent relation
+    /**
+     * Retreives all objects from storage that do not have a prescription object 
+     * 
+     * 
+     * @return Visitation
+     */
     public function lab(){
         return Visitation::doesntHave('Prescription')->orderBy('id','desc')->get();
     }
 
-    //displaying all visits that donot have a prescription but a have a test order with no lab results
+    /**
+     * Retreives all objects from storage that do not have the a prescription object but havea test_order 
+     *
+     * @return Visitation
+     */
     public function orders(){
-        $nll = !null;
-        return Visitation::doesntHave('Prescription')->whereNotNull('Test_Order')->whereNull('lab_results')->orderBy('id','desc')->get();
+            return Visitation::doesntHave('Prescription')->whereNotNull('Test_Order')->whereNull('lab_results')->orderBy('id','desc')->get();
     }
 
     /**
@@ -131,26 +164,32 @@ class VisitationController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Retreving all medications object for the visitation object
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Medication
      */
-  
-    // displaying medications given on a particular visit by passing the param visit ID as $id
     public function prescription($id){
         $visitation = Visitation::find($id);
         $meds =  $visitation->Medication()->get();
         return $meds;
    }
-   // displaying the services offered on a particular visit by passing the param visit ID as $id
+   /**
+     * Retreives all objects from storage that have the $id
+     * 
+     * @param int $id
+     * @return Visitation
+     */
     public function Services($id){
         $visitation = Visitation::find($id);
         $visits =  $visitation->Services()->get();
         return $visits;
     }
-        /**
-     * Display monthly Diagoniss report
+    /**
+     * Retreives all objects from storage that have the specified $time
+     * 
+     * @param string $time
+     * @return Visitation
      */
     public function diagnosis($time){
         if($time == "thisMonth"){

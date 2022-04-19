@@ -29,11 +29,13 @@ Route::get('/token', function(Request $request){
     return $token;
 });
 
-  //logging in
+  /*
+  *logging in
+  */
  Route::post('/sign_in', [AuthController::class, 'signIn']);
 
 //forgot password
-Route::post('/forgot_password', [ForgotPasswordController::class]);
+Route::post('/forgot_password', [AuthController::class, "forgotPassword"]);
 
 
 //password reset

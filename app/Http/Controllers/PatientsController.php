@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PatientsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the all the Patient resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -23,9 +23,7 @@ class PatientsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-
-
-    public function store(Request $request)
+   public function store(Request $request)
     {
         $id = random_int(1,99999);
         $request -> merge(['id' => $id]);
@@ -83,19 +81,38 @@ class PatientsController extends Controller
     {
         return Patient::destroy($id);
     }
-// this returns a resource that have either the attribute firstname or surname equaling to the param $name
+    /**
+     * Retreives a specific resource with the specified parameter
+     * 
+     * @param string $name
+     * 
+     * @return Patient
+     */
     public function search($name)
     {
        return Patient::Where('firstname', 'like', '%'.$name.'%')
                        -> orWhere('surname', 'like', '%'.$name.'%')->get();
     }
-// displays all resources that belong to the patient with an Id equaling to param $id 
+
+    /**
+     * Retreives a specific resoiurce with the specified parameter
+     * 
+     * @param int $id
+     * 
+     * @return Patient
+     */
     public function visits($id){
             $patient = Patient::find($id);
             return $patient->Visitation;
     }
 
-    //display the number of patients in storage
+        /**
+     * Retreives the count of objects
+     * 
+     *
+     * 
+     * @return int count
+     */
     public function count(){
         $patient = Patient::all();
         return count($patient);

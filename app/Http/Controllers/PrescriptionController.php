@@ -40,7 +40,11 @@ class PrescriptionController extends Controller
         return Prescription::create($request->all());
 
     }
-    //this function stores an array of Prescription passed to the function as $request
+    /**
+     * store an array of object in storage by looping through each object
+     * 
+     * @param \Illuminate\Http\Request $request
+     */
     public function storeArray(Request $request){
         $save = false;
         $items = $request->get('items');
@@ -62,7 +66,11 @@ class PrescriptionController extends Controller
         }
     }
 
-    //this function update an array of Prescription passed to the function as $request
+    /**
+     * Updates values each element in an array of object in storage by looping through each object
+     * 
+     * @param \Illuminate\Http\Request $request
+     */    
     public function upArray(Request $request){
         $save = false;
         $items = $request->get('items');
@@ -80,21 +88,32 @@ class PrescriptionController extends Controller
             ], 401);
         }
     }
-    // this function the prescription record the has the visitatio_id and medication_id eqauling to the passed from the $request object
+    /**
+     * Retreiving a specific object from storage
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return Prescription
+     */    
     public function search(Request $request){
         return Prescription::where("medications_id",$request.medications_id)
                              ->where("visitation_id",$request.visitation_id)->get();
     }
-// this display all prescriptions that have a visitation_ equal to param $id
+
+    /**
+     * Retrieves all objects with the specified $id
+     * 
+     * @param $id
+     * @return Prescription
+     */
     public function all($id){
         return Prescription::where("visitation_id",$id)->get();
     }
 
     /**
-     * this joins the prescription table with the medication table on medication.id and prescriptions.medications_id
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Retrives prescription details by joining the Medications table to Prescription on ID
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return Prescription
      */
     public function show()
     {
@@ -170,7 +189,7 @@ class PrescriptionController extends Controller
         }
     }
 
-        /**
+    /**
      * Dispaly all the resource from storage that meet the conditions specified in the query
      *
      */

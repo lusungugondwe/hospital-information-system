@@ -6,13 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Medication extends Model
 {
+    /**
+     * 
+     * Specifies all the parameters that can be writen into our Medication model object
+     */
     protected $fillable = [
         'name',
         'Type',
         'Price'
     ];
 
-    // this function declares are relationship that one Visitation can have many medications
+    /**
+     * Medication model belongs to many Visitation models with a Pivot prescriptions
+     */
     public function Visitation(){
         return $this ->belongsToMany(Visitation::class,'prescriptions','medications_id','visitation_id');
     }

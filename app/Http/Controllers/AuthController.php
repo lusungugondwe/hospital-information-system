@@ -10,7 +10,13 @@ use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
-    //creating a new user
+    /**
+     * Store a new user
+     * 
+     * @param \Illuminate\Http\Request  $request
+     * 
+     * @return \Illuminate\Http\Response
+     */
     public function register(Request $request){
             $fields = $request->validate([
                 'name' => 'required | string',
@@ -36,17 +42,27 @@ class AuthController extends Controller
             return response ($response, 201);
     }
 
-    //logs in the user and creates a token for all authenticated
+    /**
+     * User log in
+     * 
+     * @param \Illuminate\Http\Request  $request
+     * 
+     * @return \Illuminate\Http\Response
+     */
     public function signIn(Request $request){
         $fields = $request->validate([
             'email' => 'required |string ',
             'password' => 'required |string '
         ]);
 
-        //check email
+        /*
+        *check email
+        */
         $user = User::where('email', $fields['email']) -> first();
 
-        //check password
+        /**
+         * check password
+         */
         if(!$user || !Hash::check($fields['password'], $user->password)){
             return response([
                 'message' => 'invalid credentials'
@@ -62,7 +78,13 @@ class AuthController extends Controller
         return response ($response, 201);
 }
 
-//signs out the user and deletes the authenticationn token from the database
+    /**
+     * Enables the user to sign out
+     * 
+     * @param \Illuminate\Http\Request  $request
+     * 
+     * @return \Illuminate\Http\Response
+     */
     public function logout(Request $request){
         auth()->user()->tokens()->delete();
 
@@ -71,7 +93,13 @@ class AuthController extends Controller
         ];
     }
 
-    // this sends a password reset link the user's email
+    /**
+     * Sends a reset password Link to the users email
+     * 
+     * @param \Illuminate\Http\Request  $request
+     * 
+     * @return \Illuminate\Http\Response
+     */
     public function forgotPassword(Request $request){
         $request -> validate([
             'email' => 'required | email',
@@ -81,7 +109,13 @@ class AuthController extends Controller
             'message' => 'Reset password link sent to youre email'];
     }
 
-    // this function updates the user password in the system
+    /**
+     * Reset password for a user
+     * 
+     * @param \Illuminate\Http\Request  $request
+     * 
+     * @return \Illuminate\Http\Response
+     */
     public function resetPassword(Request $request){
         $request -> validate([
             'email'  => 'required | email',
@@ -99,18 +133,37 @@ class AuthController extends Controller
         }
         return response("Password Changed Succesifuly");
     }
-    // this function returns all active users in the system
+     /**
+     * Retreives all the objects
+     * 
+     *
+     * 
+     * @return User
+     */
     public function show(){
         return User::all();
     }
-// this returns user count
+    /**
+     * Retreives the count of objects
+     * 
+     *
+     * 
+     * @return int count
+     */
     public function count(){
         $users = User::all();
         return count($users);
 
     }
 
-    // this update the user records
+    /**
+     * Updates a specific resoiurce with the specified $id param
+     * 
+     * @param \Illuminate\Http\Request  $request
+     * @param int $id
+     * 
+     * @return User
+     */
     public function update(Request $request, $id){
         $usr = User::find($id);
         $usr ->update($request->all());

@@ -1,0 +1,1703 @@
+openapi: 3.0.3
+info:
+    title: Laravel
+    description: ''
+    version: 1.0.0
+servers:
+    -
+        url: 'http://localhost'
+paths:
+    /sanctum/csrf-cookie:
+        get:
+            summary: 'Return an empty response simply to trigger the storage of the CSRF cookie in the browser.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /api/user_Registration:
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /api/token:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                500:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Session store not set on request.'
+                                    exception: RuntimeException
+                                    file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Http\Request.php'
+                                    line: 487
+                                    trace: [{ file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\routes\api.php', line: 27, function: session, class: Illuminate\Http\Request, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Route.php', line: 205, function: '{closure}', class: Illuminate\Routing\RouteFileRegistrar, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Route.php', line: 179, function: runCallable, class: Illuminate\Routing\Route, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 681, function: run, class: Illuminate\Routing\Route, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Illuminate\Routing\{closure}', class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php', line: 41, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\sanctum\src\Http\Middleware\EnsureFrontendRequestsAreStateful.php', line: 33, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Laravel\Sanctum\Http\Middleware\{closure}', class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\sanctum\src\Http\Middleware\EnsureFrontendRequestsAreStateful.php', line: 34, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 683, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 658, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 624, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 613, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 170, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php', line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php', line: 63, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\fideloper\proxy\src\TrustProxies.php', line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\app\Http\Middleware\Cors.php', line: 18, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: App\Http\Middleware\Cors, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 145, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 324, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 119, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 32, function: call_user_func_array }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\Util.php', line: 37, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 90, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 34, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\Container.php', line: 590, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 134, function: call, class: Illuminate\Container\Container, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Command\Command.php', line: 255, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 1009, function: run, class: Illuminate\Console\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 273, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 149, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Application.php', line: 93, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php', line: 131, function: run, class: Illuminate\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\artisan', line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }]
+                                properties:
+                                    message: { type: string, example: 'Session store not set on request.' }
+                                    exception: { type: string, example: RuntimeException }
+                                    file: { type: string, example: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Http\Request.php' }
+                                    line: { type: integer, example: 487 }
+                                    trace: { type: array, example: [{ file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\routes\api.php', line: 27, function: session, class: Illuminate\Http\Request, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Route.php', line: 205, function: '{closure}', class: Illuminate\Routing\RouteFileRegistrar, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Route.php', line: 179, function: runCallable, class: Illuminate\Routing\Route, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 681, function: run, class: Illuminate\Routing\Route, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Illuminate\Routing\{closure}', class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php', line: 41, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\sanctum\src\Http\Middleware\EnsureFrontendRequestsAreStateful.php', line: 33, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Laravel\Sanctum\Http\Middleware\{closure}', class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\sanctum\src\Http\Middleware\EnsureFrontendRequestsAreStateful.php', line: 34, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 683, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 658, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 624, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 613, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 170, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php', line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php', line: 63, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\fideloper\proxy\src\TrustProxies.php', line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\app\Http\Middleware\Cors.php', line: 18, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: App\Http\Middleware\Cors, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 145, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 324, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 119, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 32, function: call_user_func_array }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\Util.php', line: 37, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 90, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 34, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\Container.php', line: 590, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 134, function: call, class: Illuminate\Container\Container, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Command\Command.php', line: 255, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 1009, function: run, class: Illuminate\Console\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 273, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 149, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Application.php', line: 93, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php', line: 131, function: run, class: Illuminate\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\artisan', line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }], items: { type: object } }
+            tags:
+                - Endpoints
+            security: []
+    /api/sign_in:
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /api/forgot_password:
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /api/reset_password:
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /api/user_count:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: integer
+                                example: 5
+            tags:
+                - Endpoints
+            security: []
+    /api/patient_count:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: integer
+                                example: 6
+            tags:
+                - Endpoints
+            security: []
+    /api/users:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example:
+                                    - { id: 1, name: 'Yambanso Kausiwa', Role: Admin, email: bsc-inf-07-17@unima.ac.mw, email_verified_at: null, created_at: '2022-03-30 21:57:04', updated_at: '2022-03-30 21:57:04' }
+                                    - { id: 2, name: 'Lusungu Gondwe', Role: Doctor, email: bed-com-09-17@unima.ac.mw, email_verified_at: null, created_at: '2022-03-30 22:24:50', updated_at: '2022-03-30 22:24:50' }
+                                    - { id: 3, name: 'Lab Technician', Role: Lab_Technician, email: labtechnician@user.com, email_verified_at: null, created_at: '2022-03-30 22:25:32', updated_at: '2022-03-30 22:25:32' }
+                                    - { id: 4, name: Pharmacist, Role: Pharmacist, email: pharmacist@user.com, email_verified_at: null, created_at: '2022-03-30 22:26:08', updated_at: '2022-03-30 22:26:08' }
+                                    - { id: 5, name: Receptionist, Role: Receptionist, email: Receptionist@user.com, email_verified_at: null, created_at: '2022-03-30 22:26:34', updated_at: '2022-03-30 22:26:34' }
+            tags:
+                - Endpoints
+            security: []
+    /api/sign_out:
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    '/api/user_Registration/{id}':
+        put:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: assumenda
+                required: true
+                schema:
+                    type: string
+    /api/patients:
+        post:
+            summary: 'Store a newly created resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        get:
+            summary: 'Display a listing of the resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example:
+                                    - { id: 5737, firstname: Thomas, surname: James, Gender: Male, Phonenumber: '+265 888 545 709', next_of_kin_contact: '+265 999 039 753', blood_group: O, Medical_scheme: 'Blue Star', Dob: '1966-03-15', address: 'Chikanda | Zomba', created_at: '2022-03-30 22:19:10', updated_at: '2022-03-30 22:19:10' }
+                                    - { id: 18997, firstname: Fatsani, surname: Byson, Gender: Male, Phonenumber: '+265 888 626 062', next_of_kin_contact: '+265 996 364 280', blood_group: B, Medical_scheme: Unimed, Dob: '2011-02-01', address: 'Chikanda | Zomba', created_at: '2022-04-01 12:52:34', updated_at: '2022-04-01 12:52:34' }
+                                    - { id: 23903, firstname: Gladys, surname: Pemphero, Gender: Female, Phonenumber: '+265 888 626 062', next_of_kin_contact: '+265 999 911 240', blood_group: AB, Medical_scheme: Masm, Dob: '1973-11-18', address: 'Kameza | Blanytre', created_at: '2022-03-30 22:18:05', updated_at: '2022-03-30 22:18:05' }
+                                    - { id: 37095, firstname: Clifton, surname: Magalasi, Gender: Male, Phonenumber: '+265 994 734 897', next_of_kin_contact: '+265 996 364 280', blood_group: A, Medical_scheme: Unimed, Dob: '1998-04-26', address: 'Namiwawa | Blantyre', created_at: '2022-03-30 22:21:44', updated_at: '2022-03-30 22:21:44' }
+                                    - { id: 39056, firstname: Wezzie, surname: Munthali, Gender: Female, Phonenumber: '+265 994 734 897', next_of_kin_contact: '+265 996 364 280', blood_group: O, Medical_scheme: 'Blue Star', Dob: '1997-09-05', address: 'Area 25 c | Lilongwe', created_at: '2022-04-05 18:18:39', updated_at: '2022-04-05 18:18:39' }
+                                    - { id: 77926, firstname: Pemphero, surname: Malili, Gender: Female, Phonenumber: '+265 884 398 409', next_of_kin_contact: '+265 995 578 532', blood_group: B, Medical_scheme: Masm, Dob: '1977-04-07', address: 'Area 23 | Lilongwe', created_at: '2022-03-30 22:20:22', updated_at: '2022-03-30 22:20:22' }
+            tags:
+                - Endpoints
+            security: []
+    '/api/patients/{id}':
+        put:
+            summary: 'Update the specified resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        delete:
+            summary: 'Remove the specified resource from storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        get:
+            summary: 'Display the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: ex
+                required: true
+                schema:
+                    type: string
+    /api/Services:
+        post:
+            summary: 'Store a newly created resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        get:
+            summary: 'Display a listing of the resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example:
+                                    - { id: 1, name: Consultation, Price: '5000.0', created_at: '2022-03-30 21:57:46', updated_at: '2022-03-30 21:57:46' }
+                                    - { id: 2, name: Laboratory, Price: '7000.0', created_at: '2022-03-30 21:58:07', updated_at: '2022-03-30 21:58:07' }
+            tags:
+                - Endpoints
+            security: []
+    '/api/Services/{id}':
+        put:
+            summary: 'Update the specified resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        delete:
+            summary: 'Remove the specified resource from storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        get:
+            summary: 'Display the specified resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: recusandae
+                required: true
+                schema:
+                    type: string
+    /api/Medication:
+        post:
+            summary: 'Store a newly created resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        get:
+            summary: 'Display a listing of the resource.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example:
+                                    - { id: 1, name: Queinien, Type: 'Anti Biotics', Price: '3000.0', created_at: '2022-03-30 22:15:32', updated_at: '2022-03-30 22:15:32' }
+                                    - { id: 2, name: Aspirin, Type: 'Pain killers', Price: '500.0', created_at: '2022-03-30 22:15:50', updated_at: '2022-03-30 22:15:50' }
+                                    - { id: 3, name: Panado, Type: 'Pain killers', Price: '540.0', created_at: '2022-03-30 22:16:03', updated_at: '2022-03-30 22:16:03' }
+                                    - { id: 4, name: 'Multi vitamin', Type: Vitamins, Price: '900.0', created_at: '2022-03-30 22:16:19', updated_at: '2022-03-30 22:16:19' }
+                                    - { id: 5, name: Zinc, Type: Minerals, Price: '670.0', created_at: '2022-03-30 22:16:31', updated_at: '2022-03-30 22:16:31' }
+                                    - { id: 6, name: Ibrupfen, Type: 'Anti Biotics', Price: '800.0', created_at: '2022-03-30 22:16:48', updated_at: '2022-03-30 22:16:48' }
+                                    - { id: 7, name: Amoxicilin, Type: 'Anti Biotics', Price: '1000.0', created_at: '2022-03-30 22:17:01', updated_at: '2022-03-30 22:17:01' }
+                                    - { id: 8, name: Coartem, Type: Minerals, Price: '2000.0', created_at: '2022-04-05 18:21:50', updated_at: '2022-04-05 18:21:50' }
+            tags:
+                - Endpoints
+            security: []
+    '/api/Medication/{id}':
+        put:
+            summary: 'Update the specified resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        delete:
+            summary: 'Remove the specified resource from storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: consequatur
+                required: true
+                schema:
+                    type: string
+    /api/Visitation:
+        post:
+            summary: 'Store a newly created resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        get:
+            summary: 'Display a listing of the all visitations'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example:
+                                    - { id: 1, patient_id: '5737', user_id: '2', Description: "Head ache\nFever\nCough", Test_Order: null, Status: Complete, lab_results: null, visit_day: 30-03-22, created_at: '2022-03-30 22:30:58', updated_at: '2022-03-30 22:43:16' }
+                                    - { id: 2, patient_id: '23903', user_id: '2', Description: "Loss of Appetite\nheadaches\nvomiting\nfever\nloss of appetite", Test_Order: 'Malaria and Blood pressure', Status: Complete, lab_results: "Malaria : Positive\nBlood Pressure : Normal", visit_day: 30-03-22, created_at: '2022-03-30 22:32:23', updated_at: '2022-03-30 22:43:25' }
+                                    - { id: 3, patient_id: '23903', user_id: '2', Description: "Vomiting\nDizzines\nbody ache", Test_Order: null, Status: Complete, lab_results: null, visit_day: 30-03-22, created_at: '2022-03-30 22:32:59', updated_at: '2022-03-30 22:43:36' }
+                                    - { id: 4, patient_id: '37095', user_id: '2', Description: "fever \nCoughing\nStomachache", Test_Order: null, Status: Complete, lab_results: null, visit_day: 30-03-22, created_at: '2022-03-30 22:33:54', updated_at: '2022-03-30 22:43:47' }
+                                    - { id: 5, patient_id: '37095', user_id: '2', Description: "Loss of appetite\nVomiting\nfever\nheadache", Test_Order: Malaria, Status: Complete, lab_results: 'Malaria : Positive', visit_day: 30-03-22, created_at: '2022-03-30 22:35:25', updated_at: '2022-03-30 22:43:56' }
+                                    - { id: 6, patient_id: '77926', user_id: '2', Description: "Headache\nDiorrhoea", Test_Order: null, Status: Complete, lab_results: null, visit_day: 30-03-22, created_at: '2022-03-30 22:36:29', updated_at: '2022-03-30 22:44:04' }
+                                    - { id: 7, patient_id: '77926', user_id: '2', Description: "fever\nDizziness\nheadache\nloss of appetite", Test_Order: Malaria, Status: Complete, lab_results: "Malaria : negative\nWhite blood Cell Count : high", visit_day: 30-03-22, created_at: '2022-03-30 22:37:10', updated_at: '2022-03-30 22:43:03' }
+                                    - { id: 8, patient_id: '18997', user_id: '2', Description: "fever\nloss of apetite\nvomiting", Test_Order: Malaria, Status: Complete, lab_results: 'Malaria : positive', visit_day: 01-04-22, created_at: '2022-04-01 12:53:27', updated_at: '2022-04-01 12:55:38' }
+                                    - { id: 9, patient_id: '39056', user_id: '2', Description: "Fever\nHeadache\nloss of appetite", Test_Order: Malaria, Status: Complete, lab_results: 'Malaria : Negative', visit_day: 05-04-22, created_at: '2022-04-05 18:22:29', updated_at: '2022-04-05 18:24:48' }
+                                    - { id: 10, patient_id: '77926', user_id: '2', Description: "fever\nHeadache", Test_Order: null, Status: Complete, lab_results: null, visit_day: 05-04-22, created_at: '2022-04-05 18:32:22', updated_at: '2022-04-05 18:33:21' }
+            tags:
+                - Endpoints
+            security: []
+    '/api/Visitation/{id}':
+        put:
+            summary: 'Update the specified resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                500:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Trying to get property ''Visitation'' of non-object'
+                                    exception: ErrorException
+                                    file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\app\Http\Controllers\PatientsController.php'
+                                    line: 95
+                                    trace: [{ file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\app\Http\Controllers\PatientsController.php', line: 95, function: handleError, class: Illuminate\Foundation\Bootstrap\HandleExceptions, type: '->' }, { function: visits, class: App\Http\Controllers\PatientsController, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Controller.php', line: 54, function: call_user_func_array }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php', line: 45, function: callAction, class: Illuminate\Routing\Controller, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Route.php', line: 219, function: dispatch, class: Illuminate\Routing\ControllerDispatcher, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Route.php', line: 176, function: runController, class: Illuminate\Routing\Route, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 681, function: run, class: Illuminate\Routing\Route, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Illuminate\Routing\{closure}', class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php', line: 41, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\sanctum\src\Http\Middleware\EnsureFrontendRequestsAreStateful.php', line: 33, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Laravel\Sanctum\Http\Middleware\{closure}', class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\sanctum\src\Http\Middleware\EnsureFrontendRequestsAreStateful.php', line: 34, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 683, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 658, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 624, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 613, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 170, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php', line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php', line: 63, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\fideloper\proxy\src\TrustProxies.php', line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\app\Http\Middleware\Cors.php', line: 18, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: App\Http\Middleware\Cors, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 145, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 324, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 119, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 32, function: call_user_func_array }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\Util.php', line: 37, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 90, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 34, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\Container.php', line: 590, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 134, function: call, class: Illuminate\Container\Container, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Command\Command.php', line: 255, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 1009, function: run, class: Illuminate\Console\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 273, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 149, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Application.php', line: 93, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php', line: 131, function: run, class: Illuminate\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\artisan', line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }]
+                                properties:
+                                    message: { type: string, example: 'Trying to get property ''Visitation'' of non-object' }
+                                    exception: { type: string, example: ErrorException }
+                                    file: { type: string, example: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\app\Http\Controllers\PatientsController.php' }
+                                    line: { type: integer, example: 95 }
+                                    trace: { type: array, example: [{ file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\app\Http\Controllers\PatientsController.php', line: 95, function: handleError, class: Illuminate\Foundation\Bootstrap\HandleExceptions, type: '->' }, { function: visits, class: App\Http\Controllers\PatientsController, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Controller.php', line: 54, function: call_user_func_array }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php', line: 45, function: callAction, class: Illuminate\Routing\Controller, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Route.php', line: 219, function: dispatch, class: Illuminate\Routing\ControllerDispatcher, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Route.php', line: 176, function: runController, class: Illuminate\Routing\Route, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 681, function: run, class: Illuminate\Routing\Route, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Illuminate\Routing\{closure}', class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php', line: 41, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\sanctum\src\Http\Middleware\EnsureFrontendRequestsAreStateful.php', line: 33, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Laravel\Sanctum\Http\Middleware\{closure}', class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\sanctum\src\Http\Middleware\EnsureFrontendRequestsAreStateful.php', line: 34, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 683, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 658, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 624, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 613, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 170, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php', line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php', line: 63, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\fideloper\proxy\src\TrustProxies.php', line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\app\Http\Middleware\Cors.php', line: 18, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: App\Http\Middleware\Cors, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 145, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 324, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 119, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 32, function: call_user_func_array }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\Util.php', line: 37, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 90, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 34, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\Container.php', line: 590, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 134, function: call, class: Illuminate\Container\Container, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Command\Command.php', line: 255, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 1009, function: run, class: Illuminate\Console\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 273, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 149, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Application.php', line: 93, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php', line: 131, function: run, class: Illuminate\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\artisan', line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }], items: { type: object } }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: repudiandae
+                required: true
+                schema:
+                    type: string
+    /api/Visitation_prescription:
+        post:
+            summary: 'Store a newly created resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /api/Visitation_prescriptions:
+        post:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        put:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    /api/ServicesOffered:
+        post:
+            summary: 'Store a newly created resource in storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+    '/api/Visitation_pivot/{id}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example: []
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: sequi
+                required: true
+                schema:
+                    type: string
+    '/api/patients/search/{name}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example: []
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: name
+                description: ''
+                example: magnam
+                required: true
+                schema:
+                    type: string
+    '/api/Visitation_Services/{id}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                500:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Call to a member function Services() on null'
+                                    exception: Symfony\Component\Debug\Exception\FatalThrowableError
+                                    file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\app\Http\Controllers\VisitationController.php'
+                                    line: 149
+                                    trace: [{ function: Services, class: App\Http\Controllers\VisitationController, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Controller.php', line: 54, function: call_user_func_array }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php', line: 45, function: callAction, class: Illuminate\Routing\Controller, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Route.php', line: 219, function: dispatch, class: Illuminate\Routing\ControllerDispatcher, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Route.php', line: 176, function: runController, class: Illuminate\Routing\Route, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 681, function: run, class: Illuminate\Routing\Route, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Illuminate\Routing\{closure}', class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php', line: 41, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\sanctum\src\Http\Middleware\EnsureFrontendRequestsAreStateful.php', line: 33, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Laravel\Sanctum\Http\Middleware\{closure}', class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\sanctum\src\Http\Middleware\EnsureFrontendRequestsAreStateful.php', line: 34, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 683, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 658, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 624, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 613, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 170, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php', line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php', line: 63, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\fideloper\proxy\src\TrustProxies.php', line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\app\Http\Middleware\Cors.php', line: 18, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: App\Http\Middleware\Cors, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 145, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 324, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 119, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 32, function: call_user_func_array }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\Util.php', line: 37, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 90, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 34, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\Container.php', line: 590, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 134, function: call, class: Illuminate\Container\Container, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Command\Command.php', line: 255, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 1009, function: run, class: Illuminate\Console\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 273, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 149, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Application.php', line: 93, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php', line: 131, function: run, class: Illuminate\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\artisan', line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }]
+                                properties:
+                                    message: { type: string, example: 'Call to a member function Services() on null' }
+                                    exception: { type: string, example: Symfony\Component\Debug\Exception\FatalThrowableError }
+                                    file: { type: string, example: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\app\Http\Controllers\VisitationController.php' }
+                                    line: { type: integer, example: 149 }
+                                    trace: { type: array, example: [{ function: Services, class: App\Http\Controllers\VisitationController, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Controller.php', line: 54, function: call_user_func_array }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php', line: 45, function: callAction, class: Illuminate\Routing\Controller, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Route.php', line: 219, function: dispatch, class: Illuminate\Routing\ControllerDispatcher, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Route.php', line: 176, function: runController, class: Illuminate\Routing\Route, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 681, function: run, class: Illuminate\Routing\Route, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Illuminate\Routing\{closure}', class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php', line: 41, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\sanctum\src\Http\Middleware\EnsureFrontendRequestsAreStateful.php', line: 33, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Laravel\Sanctum\Http\Middleware\{closure}', class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\sanctum\src\Http\Middleware\EnsureFrontendRequestsAreStateful.php', line: 34, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 683, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 658, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 624, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 613, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 170, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php', line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php', line: 63, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\fideloper\proxy\src\TrustProxies.php', line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\app\Http\Middleware\Cors.php', line: 18, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: App\Http\Middleware\Cors, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 145, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 324, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 119, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 32, function: call_user_func_array }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\Util.php', line: 37, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 90, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 34, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\Container.php', line: 590, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 134, function: call, class: Illuminate\Container\Container, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Command\Command.php', line: 255, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 1009, function: run, class: Illuminate\Console\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 273, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 149, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Application.php', line: 93, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php', line: 131, function: run, class: Illuminate\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\artisan', line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }], items: { type: object } }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: sit
+                required: true
+                schema:
+                    type: string
+    '/api/Visitation/Administer/{id}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example: []
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: culpa
+                required: true
+                schema:
+                    type: string
+    /api/Prescription:
+        get:
+            summary: 'this joins the prescription table with the medication table on medication.id and prescriptions.medications_id'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example:
+                                    - { id: 1, visitation_id: '1', name: Aspirin, Price: '500.0' }
+                                    - { id: 2, visitation_id: '1', name: 'Multi vitamin', Price: '900.0' }
+                                    - { id: 3, visitation_id: '1', name: Zinc, Price: '670.0' }
+                                    - { id: 4, visitation_id: '1', name: Amoxicilin, Price: '1000.0' }
+                                    - { id: 5, visitation_id: '3', name: Panado, Price: '540.0' }
+                                    - { id: 6, visitation_id: '3', name: 'Multi vitamin', Price: '900.0' }
+                                    - { id: 7, visitation_id: '3', name: Zinc, Price: '670.0' }
+                                    - { id: 8, visitation_id: '3', name: Ibrupfen, Price: '800.0' }
+                                    - { id: 9, visitation_id: '4', name: Aspirin, Price: '500.0' }
+                                    - { id: 10, visitation_id: '4', name: 'Multi vitamin', Price: '900.0' }
+                                    - { id: 11, visitation_id: '4', name: Amoxicilin, Price: '1000.0' }
+                                    - { id: 12, visitation_id: '6', name: Aspirin, Price: '500.0' }
+                                    - { id: 13, visitation_id: '6', name: 'Multi vitamin', Price: '900.0' }
+                                    - { id: 14, visitation_id: '6', name: Zinc, Price: '670.0' }
+                                    - { id: 15, visitation_id: '6', name: Ibrupfen, Price: '800.0' }
+                                    - { id: 16, visitation_id: '7', name: Aspirin, Price: '500.0' }
+                                    - { id: 17, visitation_id: '7', name: 'Multi vitamin', Price: '900.0' }
+                                    - { id: 18, visitation_id: '7', name: Zinc, Price: '670.0' }
+                                    - { id: 19, visitation_id: '7', name: Amoxicilin, Price: '1000.0' }
+                                    - { id: 20, visitation_id: '5', name: Queinien, Price: '3000.0' }
+                                    - { id: 21, visitation_id: '5', name: Aspirin, Price: '500.0' }
+                                    - { id: 22, visitation_id: '5', name: 'Multi vitamin', Price: '900.0' }
+                                    - { id: 23, visitation_id: '2', name: Queinien, Price: '3000.0' }
+                                    - { id: 24, visitation_id: '2', name: Aspirin, Price: '500.0' }
+                                    - { id: 25, visitation_id: '2', name: 'Multi vitamin', Price: '900.0' }
+                                    - { id: 26, visitation_id: '8', name: Queinien, Price: '3000.0' }
+                                    - { id: 27, visitation_id: '8', name: Aspirin, Price: '500.0' }
+                                    - { id: 28, visitation_id: '9', name: Aspirin, Price: '500.0' }
+                                    - { id: 29, visitation_id: '9', name: 'Multi vitamin', Price: '900.0' }
+                                    - { id: 30, visitation_id: '9', name: Amoxicilin, Price: '1000.0' }
+                                    - { id: 31, visitation_id: '10', name: Aspirin, Price: '500.0' }
+                                    - { id: 32, visitation_id: '10', name: Amoxicilin, Price: '1000.0' }
+            tags:
+                - Endpoints
+            security: []
+    '/api/Visitation_Prescription/{id}':
+        get:
+            summary: 'Remove the specified resource from storage.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                500:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Call to a member function Medication() on null'
+                                    exception: Symfony\Component\Debug\Exception\FatalThrowableError
+                                    file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\app\Http\Controllers\VisitationController.php'
+                                    line: 143
+                                    trace: [{ function: prescription, class: App\Http\Controllers\VisitationController, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Controller.php', line: 54, function: call_user_func_array }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php', line: 45, function: callAction, class: Illuminate\Routing\Controller, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Route.php', line: 219, function: dispatch, class: Illuminate\Routing\ControllerDispatcher, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Route.php', line: 176, function: runController, class: Illuminate\Routing\Route, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 681, function: run, class: Illuminate\Routing\Route, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Illuminate\Routing\{closure}', class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php', line: 41, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\sanctum\src\Http\Middleware\EnsureFrontendRequestsAreStateful.php', line: 33, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Laravel\Sanctum\Http\Middleware\{closure}', class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\sanctum\src\Http\Middleware\EnsureFrontendRequestsAreStateful.php', line: 34, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 683, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 658, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 624, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 613, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 170, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php', line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php', line: 63, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\fideloper\proxy\src\TrustProxies.php', line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\app\Http\Middleware\Cors.php', line: 18, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: App\Http\Middleware\Cors, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 145, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 324, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 119, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 32, function: call_user_func_array }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\Util.php', line: 37, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 90, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 34, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\Container.php', line: 590, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 134, function: call, class: Illuminate\Container\Container, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Command\Command.php', line: 255, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 1009, function: run, class: Illuminate\Console\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 273, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 149, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Application.php', line: 93, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php', line: 131, function: run, class: Illuminate\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\artisan', line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }]
+                                properties:
+                                    message: { type: string, example: 'Call to a member function Medication() on null' }
+                                    exception: { type: string, example: Symfony\Component\Debug\Exception\FatalThrowableError }
+                                    file: { type: string, example: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\app\Http\Controllers\VisitationController.php' }
+                                    line: { type: integer, example: 143 }
+                                    trace: { type: array, example: [{ function: prescription, class: App\Http\Controllers\VisitationController, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Controller.php', line: 54, function: call_user_func_array }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php', line: 45, function: callAction, class: Illuminate\Routing\Controller, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Route.php', line: 219, function: dispatch, class: Illuminate\Routing\ControllerDispatcher, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Route.php', line: 176, function: runController, class: Illuminate\Routing\Route, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 681, function: run, class: Illuminate\Routing\Route, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Illuminate\Routing\{closure}', class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php', line: 41, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\sanctum\src\Http\Middleware\EnsureFrontendRequestsAreStateful.php', line: 33, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Laravel\Sanctum\Http\Middleware\{closure}', class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\sanctum\src\Http\Middleware\EnsureFrontendRequestsAreStateful.php', line: 34, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 683, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 658, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 624, function: runRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 613, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 170, function: dispatch, class: Illuminate\Routing\Router, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 130, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php', line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php', line: 63, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\fideloper\proxy\src\TrustProxies.php', line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\app\Http\Middleware\Cors.php', line: 18, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 171, function: handle, class: App\Http\Middleware\Cors, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 105, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 145, function: then, class: Illuminate\Pipeline\Pipeline, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 324, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 119, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 32, function: call_user_func_array }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\Util.php', line: 37, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 90, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 34, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Container\Container.php', line: 590, function: call, class: Illuminate\Container\BoundMethod, type: '::' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 134, function: call, class: Illuminate\Container\Container, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Command\Command.php', line: 255, function: execute, class: Illuminate\Console\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 1009, function: run, class: Illuminate\Console\Command, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 273, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\symfony\console\Application.php', line: 149, function: doRun, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Console\Application.php', line: 93, function: run, class: Symfony\Component\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php', line: 131, function: run, class: Illuminate\Console\Application, type: '->' }, { file: 'C:\Users\2.0\Documents\D4\COM422\Project\Api\HMS\artisan', line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->' }], items: { type: object } }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: ut
+                required: true
+                schema:
+                    type: string
+    '/api/active_visits/{status}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example: []
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: status
+                description: ''
+                example: unde
+                required: true
+                schema:
+                    type: string
+    /api/Visitation_without_Prescription:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example: []
+            tags:
+                - Endpoints
+            security: []
+    /api/Visitation_without_Results:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example: []
+            tags:
+                - Endpoints
+            security: []
+    /api/lab_test_orders:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example: []
+            tags:
+                - Endpoints
+            security: []
+    '/api/Visitation_today/{patient_id}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example: []
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: patient_id
+                description: ''
+                example: praesentium
+                required: true
+                schema:
+                    type: string
+    '/api/Medication/search/{name}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example: []
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: name
+                description: ''
+                example: eius
+                required: true
+                schema:
+                    type: string
+    '/api/Services/search/{name}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                example: []
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: name
+                description: ''
+                example: ullam
+                required: true
+                schema:
+                    type: string
+    '/api/report/{time}':
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'no time preiod passed'
+                                properties:
+                                    message: { type: string, example: 'no time preiod passed' }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: time
+                description: ''
+                example: molestiae
+                required: true
+                schema:
+                    type: string
+    '/api/Diagnosis/{time}':
+        get:
+            summary: 'Display monthly Diagoniss report'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'no time preiod passed'
+                                properties:
+                                    message: { type: string, example: 'no time preiod passed' }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: time
+                description: ''
+                example: veniam
+                required: true
+                schema:
+                    type: string
+    '/api/reportMonthlyMeds/{time}':
+        get:
+            summary: 'Dispaly all the resource from storage that meet the conditions specified in the query'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'no time preiod passed'
+                                properties:
+                                    message: { type: string, example: 'no time preiod passed' }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: time
+                description: ''
+                example: magni
+                required: true
+                schema:
+                    type: string
+    '/api/reportMonthlyMedsUnPrescribed/{time}':
+        get:
+            summary: 'Dispaly all the resource from storage that meet the conditions specified in the query'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'no time preiod passed'
+                                properties:
+                                    message: { type: string, example: 'no time preiod passed' }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: time
+                description: ''
+                example: neque
+                required: true
+                schema:
+                    type: string
+    /:
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n        <title>Laravel</title>\n\n        <!-- Fonts -->\n        <link href=\"https://fonts.googleapis.com/css?family=Nunito:200,600\" rel=\"stylesheet\">\n\n        <!-- Styles -->\n        <style>\n            html, body {\n                background-color: #fff;\n                color: #636b6f;\n                font-family: 'Nunito', sans-serif;\n                font-weight: 200;\n                height: 100vh;\n                margin: 0;\n            }\n\n            .full-height {\n                height: 100vh;\n            }\n\n            .flex-center {\n                align-items: center;\n                display: flex;\n                justify-content: center;\n            }\n\n            .position-ref {\n                position: relative;\n            }\n\n            .top-right {\n                position: absolute;\n                right: 10px;\n                top: 18px;\n            }\n\n            .content {\n                text-align: center;\n            }\n\n            .title {\n                font-size: 84px;\n            }\n\n            .links > a {\n                color: #636b6f;\n                padding: 0 25px;\n                font-size: 13px;\n                font-weight: 600;\n                letter-spacing: .1rem;\n                text-decoration: none;\n                text-transform: uppercase;\n            }\n\n            .m-b-md {\n                margin-bottom: 30px;\n            }\n        </style>\n    </head>\n    <body>\n        <div class=\"flex-center position-ref full-height\">\n            \n            <div class=\"content\">\n                <div class=\"title m-b-md\">\n                    Laravel\n                </div>\n\n                <div class=\"links\">\n                    <a href=\"https://laravel.com/docs\">Docs</a>\n                    <a href=\"https://laracasts.com\">Laracasts</a>\n                    <a href=\"https://laravel-news.com\">News</a>\n                    <a href=\"https://blog.laravel.com\">Blog</a>\n                    <a href=\"https://nova.laravel.com\">Nova</a>\n                    <a href=\"https://forge.laravel.com\">Forge</a>\n                    <a href=\"https://vapor.laravel.com\">Vapor</a>\n                    <a href=\"https://github.com/laravel/laravel\">GitHub</a>\n                </div>\n            </div>\n        </div>\n    </body>\n</html>\n"
+            tags:
+                - Endpoints
+            security: []
+    /forgot_password:
+        get:
+            summary: 'Invoke the controller method.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: ''
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n    <title>Laravel Starter</title>\n\n    <!-- Fonts -->\n    <link href=\"https://fonts.googleapis.com/css?family=Nunito:200,600\" rel=\"stylesheet\">\n\n    <!-- Styles -->\n    <style>\n        html, body {\n            background-color: #f1f1f1;\n            color: #636b6f;\n            font-family: 'Nunito', sans-serif;\n            font-weight: 200;\n            height: 100vh;\n            margin: 0;\n        }\n        .full-height {\n            height: 100vh;\n        }\n        .flex-center {\n            align-items: center;\n            display: flex;\n            justify-content: center;\n        }\n        .position-ref {\n            position: relative;\n        }\n        input {\n            padding: 10pt;\n            width: 60%;\n            font-size: 15pt;\n            border-radius: 5pt;\n            border: 1px solid lightgray;\n            margin: 10pt;\n        }\n        .form-container {\n            display: flex;\n            flex-direction: column;\n            width: 60%;\n            align-items: center;\n            margin: 20pt;\n            border: 1px solid lightgray;\n            padding: 20pt;\n            border-radius: 5pt;\n            background: white;\n        }\n        button {\n            border-radius: 5pt;\n            padding: 10pt 14pt;\n            background: white;\n            border: 1px solid gray;\n            font-size: 14pt;\n            margin: 20pt;\n        }\n        button:hover {\n            background: lightgray;\n        }\n    </style>\n</head>\n<body>\n<div class=\"flex-center position-ref full-height\">\n    <form class=\"form-container\" action=\"api/reset_password\" method=\"POST\">\n        <h2>Forgot Password?</h2>\n\n        <input name=\"email\" placeholder=\"Enter email\" value=\"\">\n        <input name=\"password\" placeholder=\"Enter new password\">\n        <input name=\"password_confirmation\" placeholder=\"Confirm new password\">\n        <input hidden name=\"token\" placeholder=\"token\" value=\"\">\n\n        <button type=\"submit\">Submit</button>\n    </form>\n</div>\n</body>\n</html>\n"
+            tags:
+                - Endpoints
+            security: []

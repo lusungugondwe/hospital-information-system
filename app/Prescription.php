@@ -6,17 +6,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class Prescription extends Model
 {
+    /**
+     * 
+     * Specifies all the parameters that can be writen into our Prescription model object
+     */
     protected $fillable = [
         'visitation_id',
         'medications_id',
         'Qauntity',
         'Status',
     ];
-    // this function declares the visit model ownership of an instance of the Prescription model
+    /**
+     * Prescription model belongs to one Visitation model
+     */
     public function Visitation(){
         return $this->belongsTo(Visitation::class);
     }
-// this function declares that a medication instance can have many prescriptions
+    /**
+     * Prescription model belongs to many Medication Model with a pivot Prescription
+     */
     public function Medication(){
         return $this->belongsToMany(Medication::class,'prescriptions');
     }

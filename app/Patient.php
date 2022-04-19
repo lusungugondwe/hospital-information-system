@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Patient extends Model
 {
+    /**
+     * 
+     * Specifies all the parameters that can be writen into our Pateint model object
+     */
     protected $fillable = [
         'id',
         'firstname',
@@ -19,7 +23,9 @@ class Patient extends Model
         'address'
 
     ];
-    // this function is there to define the relationship that a client (patient) can have many instances of the visitation model
+    /**
+     * Patient model has many Visitiation models
+     */
     public function Visitation(){
         return $this ->hasMany(Visitation::class);
     }
